@@ -8,4 +8,6 @@ interface employeeService {
         List<employee> findAll();
         employee getById(int id);
         List<employee> deleteById(int id);
+
+        List<employee> updateEmployee(Integer id, employee employee);
 }

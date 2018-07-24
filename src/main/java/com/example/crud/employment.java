@@ -61,5 +61,15 @@ public class employment implements employeeService{
         }
         return employeeList;
     }
+
+    @Override
+    public List<employee> updateEmployee(Integer id, employee employee) {
+        for(int i=0;i<employeeList.size();i++){
+            if(employeeList.get(i).id==id){
+                employeeList.set(i,employee);
+            }
+        }
+        return employeeList;
+    }
 }
 

@@ -42,18 +42,39 @@ public class employment implements employeeService{
     }
 
     @Override
-    public employee getById(int id) {
-        employee theOne = null;
-        for(int i=0;i<employeeList.size();i++){
-            if(employeeList.get(i).id==id){
-                theOne=employeeList.get(i);
+    public List<employee> getById(String id) {
+        List<employee> employeeGenderList=new ArrayList<>();
+        if(isDigit(id)){
+            for(int i=0;i<employeeList.size();i++){
+                if(employeeList.get(i).id==Integer.valueOf(id)){
+                    employeeGenderList.add(employeeList.get(i));
+                }
+            }
+        }else{
+            if(id.matches("male")){
+                for(int i=0;i<employeeList.size();i++){
+                    if(employeeList.get(i).gender=="男"){
+                        employeeGenderList.add(employeeList.get(i));
+                    }
+                }
+            }else if(id.matches("female")){
+                for(int i=0;i<employeeList.size();i++){
+                    if(employeeList.get(i).gender=="女"){
+                        employeeGenderList.add(employeeList.get(i));
+                    }
+                }
             }
         }
-        return theOne;
+        return employeeGenderList;
     }
+    public boolean isDigit(String strNum) {
+        return strNum.matches("[0-9]{1,}");
+    }
+
 
     @Override
     public List<employee> deleteById(int id) {
+        String gender= String.valueOf(id);
         for(int i=0;i<employeeList.size();i++){
             if(employeeList.get(i).id==id){
                employeeList.remove(i);
@@ -70,6 +91,25 @@ public class employment implements employeeService{
             }
         }
         return employeeList;
+    }
+
+    @Override
+    public List<employee> getByGender(String gender) {
+        List<employee> employeeGenderList=new ArrayList<>();
+        if(gender=="male"){
+            for(int i=0;i<employeeList.size();i++){
+                if(employeeList.get(i).gender=="男"){
+                    employeeGenderList.add(employeeList.get(i));
+                }
+            }
+        }else{
+            for(int i=0;i<employeeList.size();i++){
+                if(employeeList.get(i).gender=="女"){
+                    employeeGenderList.add(employeeList.get(i));
+                }
+            }
+        }
+        return employeeGenderList;
     }
 }
 

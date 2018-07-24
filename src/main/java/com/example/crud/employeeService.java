@@ -7,6 +7,5 @@ interface employeeService {
         List<employee> add(employee employee);
         List<employee> findAll();
         employee getById(int id);
-
-
+        List<employee> deleteById(int id);
 }

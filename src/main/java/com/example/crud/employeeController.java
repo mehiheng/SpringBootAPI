@@ -3,7 +3,6 @@ package com.example.crud;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.event.InputEvent;
 import java.util.List;
 
 
@@ -18,7 +17,7 @@ public class employeeController {
         return employeeService.findAll();
     }
 
-    @PostMapping(path = "/employees")
+    @PostMapping( "/employees")
     public List<employee> add(@RequestBody employee employees) {
         return employeeService.add(employees);
     }
@@ -26,6 +25,11 @@ public class employeeController {
     @GetMapping("/employees/{id}")
     public employee getById(@PathVariable int id){
         return employeeService.getById(id);
+    }
+
+    @DeleteMapping("/employees/{id}")
+    public List<employee> deleteById(@PathVariable int id){
+        return employeeService.deleteById(id);
     }
 
 }

@@ -51,5 +51,15 @@ public class employment implements employeeService{
         }
         return theOne;
     }
+
+    @Override
+    public List<employee> deleteById(int id) {
+        for(int i=0;i<employeeList.size();i++){
+            if(employeeList.get(i).id==id){
+               employeeList.remove(i);
+            }
+        }
+        return employeeList;
+    }
 }
 

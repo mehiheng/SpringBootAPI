@@ -35,6 +35,10 @@ public class employeeController {
     @PutMapping(("/employees/{id}"))
     public List<employee> updateEmployee(@PathVariable Integer id, @RequestBody employee employee) {
         return employeeService.updateEmployee(id, employee);
-
     }
+    //分页
+//    @GetMapping("/employees/page/{num}/pageSize/{page}")
+//    public List<employee> getById(@PathVariable int num,@PathVariable int page){
+//        return employeeService.getByPage(num,page);
+//    }
 }

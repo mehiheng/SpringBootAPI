@@ -12,9 +12,7 @@ public class employee {
         this.age=b;
         this.gender=v;
     }
-    public employee() {
-
-    }
+    public employee() {}
 
     public int getId() {
         return id;

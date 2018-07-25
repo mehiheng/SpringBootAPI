@@ -93,23 +93,13 @@ public class employment implements employeeService{
         return employeeList;
     }
 
-    @Override
-    public List<employee> getByGender(String gender) {
-        List<employee> employeeGenderList=new ArrayList<>();
-        if(gender=="male"){
-            for(int i=0;i<employeeList.size();i++){
-                if(employeeList.get(i).gender=="男"){
-                    employeeGenderList.add(employeeList.get(i));
-                }
-            }
-        }else{
-            for(int i=0;i<employeeList.size();i++){
-                if(employeeList.get(i).gender=="女"){
-                    employeeGenderList.add(employeeList.get(i));
-                }
-            }
-        }
-        return employeeGenderList;
-    }
+//    @Override
+//    public List<employee> getByPage(int num, int page) {
+//        return null;
+//    }
+
+
+
+
 }
 

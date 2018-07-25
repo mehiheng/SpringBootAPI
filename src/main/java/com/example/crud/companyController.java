@@ -35,4 +35,9 @@ public class companyController {
     public List<company> updateCompany(@PathVariable int id, @RequestBody company companies){
         return companyService.updateCompany(id,companies);
     }
+    //删除公司
+    @DeleteMapping("/companies/{id}")
+    public List<company> deleteCompany(@PathVariable int id){
+        return companyService.deleteCompany(id);
+    }
 }

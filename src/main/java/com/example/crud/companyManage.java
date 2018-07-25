@@ -40,16 +40,22 @@ public class companyManage implements companyService {
     public List<employee> findCompanyEmployees(int i) {
         return companyList.get(i-1).employeeList;
     }
-
+    //添加公司
     @Override
     public List<company> addCompany(company companies) {
         companyList.add(companies);
         return companyList;
     }
-
+    //更新公司
     @Override
     public List<company> updateCompany(int id, company companies) {
         companyList.set(id-1,companies);
+        return companyList;
+    }
+    //删除公司
+    @Override
+    public List<company> deleteCompany(int id) {
+        companyList.remove(id-1);
         return companyList;
     }
 }

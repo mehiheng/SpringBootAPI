@@ -21,11 +21,6 @@ public class companyManage implements companyService {
         companyList.add(a);
         return companyList;
     }
-
-
-
-
-
     //公司列表
     @Override
     public List<String> findAll() {
@@ -39,5 +34,10 @@ public class companyManage implements companyService {
     @Override
     public company findCompany(int i) {
         return companyList.get(i-1);
+    }
+    //查询具体公司的员工
+    @Override
+    public List<employee> findCompanyEmployees(int i) {
+        return companyList.get(i-1).employeeList;
     }
 }

@@ -35,4 +35,9 @@ public class companyManage implements companyService {
         }
         return nameList;
     }
+    //查询具体公司
+    @Override
+    public company findCompany(int i) {
+        return companyList.get(i-1);
+    }
 }

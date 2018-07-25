@@ -6,4 +6,5 @@ interface companyService {
     List<String> findAll();
     company findCompany(int i);
     List<employee> findCompanyEmployees(int i);
+    List<company> addCompany(company companies);
 }

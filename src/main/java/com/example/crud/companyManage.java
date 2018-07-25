@@ -40,4 +40,10 @@ public class companyManage implements companyService {
     public List<employee> findCompanyEmployees(int i) {
         return companyList.get(i-1).employeeList;
     }
+
+    @Override
+    public List<company> addCompany(company companies) {
+        companyList.add(companies);
+        return companyList;
+    }
 }

@@ -7,4 +7,5 @@ interface companyService {
     company findCompany(int i);
     List<employee> findCompanyEmployees(int i);
     List<company> addCompany(company companies);
+    List<company> updateCompany(int id, company companies);
 }

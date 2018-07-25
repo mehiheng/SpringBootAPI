@@ -30,4 +30,9 @@ public class companyController {
     public List<company> addCompany(@RequestBody company companies) {
         return companyService.addCompany(companies);
     }
+    //更新公司
+    @PutMapping("/companies/{id}")
+    public List<company> updateCompany(@PathVariable int id, @RequestBody company companies){
+        return companyService.updateCompany(id,companies);
+    }
 }

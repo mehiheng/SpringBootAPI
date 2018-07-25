@@ -46,4 +46,10 @@ public class companyManage implements companyService {
         companyList.add(companies);
         return companyList;
     }
+
+    @Override
+    public List<company> updateCompany(int id, company companies) {
+        companyList.set(id-1,companies);
+        return companyList;
+    }
 }

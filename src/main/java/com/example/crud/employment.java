@@ -93,13 +93,15 @@ public class employment implements employeeService{
         return employeeList;
     }
 
-//    @Override
-//    public List<employee> getByPage(int num, int page) {
-//        return null;
-//    }
-
-
-
-
+    @Override
+    public List<employee> getByPage(int page, int pagesize) {
+        int size = employeeList.size();
+        int begin = (page - 1) * pagesize;
+        List<employee> getByPage = new ArrayList<>();
+        for (int i = begin; i < size && ((i - begin) < pagesize); i++) {
+            getByPage.add(employeeList.get(i));
+            }
+            return getByPage;
+        }
 }
 
